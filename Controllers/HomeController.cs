@@ -27,8 +27,8 @@ namespace MyWeatherAuth.Controllers
             //ViewBag.Email = email;
             //ViewBag.Password = password;
 
-            if (email != null && password != null)
-            {
+            //if (email != null && password != null)
+            
                 //email: superMan@super.com; pass: "helloworld"
                 if (email == "superMan@super.com" && password == "123")
                 {
@@ -36,19 +36,20 @@ namespace MyWeatherAuth.Controllers
 
                 }
                 else
-                {                    
-                    return View("");
+                {
+                    ViewData["auth_error"] = "erro";
+                    return View("Index");
                    
 
                 }
-            }
-            else
-            {
-                return View("");
-                //ViewBag.Error = "Invalid file name or file path";
-                //RedirectToAction("Index");
+            
+            //else
+            //{
+            //    return View("");
+            //    //ViewBag.Error = "Invalid file name or file path";
+            //    //RedirectToAction("Index");
 
-            }
+            //}
         }
 
 
